@@ -247,8 +247,17 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  const arr = [0, 1];
+
+  let i = 2;
+
+  while (arr[index] === undefined) {
+    arr[i] = arr[i - 1] + arr[i - 2];
+    i += 1;
+  }
+
+  return arr[index];
 }
 
 /**
@@ -377,8 +386,8 @@ function toFixed(number, fractionDigits) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  return number.toPrecision(precision).toString();
 }
 
 /**
